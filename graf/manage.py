@@ -3,6 +3,7 @@
 import os
 import sys
 
+#ctrl c for å avslutte server
 
 def main():
     """Run administrative tasks."""
