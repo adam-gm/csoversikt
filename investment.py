@@ -5,7 +5,7 @@ import requests
 
 httpGET = requests.get("https://buff.163.com/api/market/goods?game=csgo")
 csrfToken = httpGET.cookies.get('csrf_token')
-#test
+
 
 cookies = {
     "csrf-token": csrfToken,
