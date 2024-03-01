@@ -135,4 +135,4 @@ print("Lagrer ny og gammel data til JSON-fila")
 lagreNyData(prosessertData)
 print("Data lagret", prosessertData)
 
-#Jsonprosjekt1!
+
