@@ -5,6 +5,7 @@ import requests
 
 httpGET = requests.get("https://buff.163.com/api/market/goods?game=csgo")
 csrfToken = httpGET.cookies.get('csrf_token')
+#test
 
 cookies = {
     "csrf-token": csrfToken,
@@ -114,19 +115,19 @@ print("Legger til ny data hos gammel data")
 lagretData.append(nyData)
 print("Ny lagret data: ", lagretData)
 
-for i in range(10):
-    #Hente buff priser
-    print("Henter BUFF priser")
-    requestMarketPrice()
-    print("BUFF priser hentet")
 
-    #Lagre buffpriser i liste
-    buffPrisData = lastInnMarkedData()
-    #Merge alleredeeksisterende investering
+#Hente buff priser
+print("Henter BUFF priser")
+requestMarketPrice()
+print("BUFF priser hentet")
 
-    print("Sjekker for duplisert investering")
-    prosessertData = mergeEksisterendeData(buffPrisData, lagretData)
-    print("Fusjonerer eventuell alleredeeksisterende investering")
+#Lagre buffpriser i liste
+buffPrisData = lastInnMarkedData()
+#Merge alleredeeksisterende investering
+
+print("Sjekker for duplisert investering")
+prosessertData = mergeEksisterendeData(buffPrisData, lagretData)
+print("Fusjonerer eventuell alleredeeksisterende investering")
 
 
 # Overskrive JSON fila med ny og gammel data
