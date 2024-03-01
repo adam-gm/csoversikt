@@ -3,19 +3,6 @@ import numpy as np
 import json
 import requests
 
-httpGET = requests.get("https://buff.163.com/api/market/goods?game=csgo")
-csrfToken = httpGET.cookies.get('csrf_token')
-
-
-cookies = {
-    "csrf-token": csrfToken,
-    "client_id":"7-h_oTfFgQT6Jj-8F1mLRA",
-    "game":"csgo",
-    "display_appids":"[730\054 570\054 1]",
-    "Locale-Supported":"en",
-    "Device-Id":"pz5W6Q9OQxiycPdvob1L",
-}
-
 def inputInvestment():
     item = input("Ny investment: ")
     antall = int(input("Hvor mange kjøpt: "))
@@ -83,7 +70,7 @@ def lagreNyData(data):
         json.dump(data, file)
 
 def requestMarketPrice():
-    response = requests.get("https://buff.163.com/api/market/goods?game=csgo", cookies=cookies) #Henter data fra markedsiden
+    response = requests.get("https://buff.163.com/api/market/goods?game=csgo") #Henter data fra markedsiden
     marketData = response.json() #Konverter responsen til json
 
     with open("buffprice.json", "w") as file:
