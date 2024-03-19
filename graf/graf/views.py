@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from graf.investment import lastInnLagretData
+import investment
 
 #Lage "views" her
 def index(request):
-    return render(request, 'index.html', 'index2.html')
+    return render(request, 'index.html')
 
 def getSavedInvestments(request):
-    data  = lastInnLagretData()
+    data  = investment.lastInnLagretData()
     return render(request, 'index3.html', {'data': data})

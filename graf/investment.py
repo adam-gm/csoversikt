@@ -28,7 +28,7 @@ def inputInvestment():
         return data
 
 def lastInnLagretData():
-    with open("./json/investment.json", "r") as file:
+    with open("investment.json", "r") as file:
         try:
             lagretData = []
             lagretData = json.load(file)
@@ -66,18 +66,18 @@ def mergeEksisterendeData(markedList, dataList):
     return list(data.values()) 
 
 def lagreNyData(data):
-    with open("./json/investment.json", "w") as file:
+    with open("investment.json", "w") as file:
         json.dump(data, file)
 
 def requestMarketPrice():
     response = requests.get("https://buff.163.com/api/market/goods?game=csgo") #Henter data fra markedsiden
     marketData = response.json() #Konverter responsen til json
 
-    with open("./json/buffprice.json", "w") as file:
+    with open("buffprice.json", "w") as file:
         json.dump(marketData,file)
 
 def lastInnMarkedData():
-    with open("./json/buffprice.json", "r") as file:
+    with open("buffprice.json", "r") as file:
         try:
             lagretData = []
             lagretData = json.load(file)
