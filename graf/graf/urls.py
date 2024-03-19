@@ -20,6 +20,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index', views.index, name='index'),
+    path('index','index2', views.index, name='index'),
+    path('index3', views.getSavedInvestments, name='index3'),
     path('input', include('inputinvestment.urls'))
 ]
