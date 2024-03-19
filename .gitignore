@@ -1,5 +1,8 @@
 db.sqlite3
-./graf/__pycache__
-./graf/__init__.py
-./graf/settings.py
+./graf/graf/__pycache__
+./graf/graf/__init__.py
+./graf/graf/settings.py
 wsgi.py
+
+buffprice.json
+investment.json
