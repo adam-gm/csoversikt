@@ -1,0 +1,5 @@
+db.sqlite3
+./graf/__pycache__
+./graf/__init__.py
+./graf/settings.py
+wsgi.py
